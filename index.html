@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Monarca Industries</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: black;
-            color: white;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monarca Page</title>
+  <style>
+    body {
+      background-image: url('ruta-de-tu-imagen/monarca-grande.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
-        header {
-            padding: 20px;
-            font-size: 30px;
-            background: #111;
-        }
+    .links {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
 
-        img {
-            width: 300px;
-            margin: 20px;
-            border-radius: 10px;
-        }
+    .links a {
+      text-decoration: none;
+      color: white;
+      margin-right: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 5px 10px;
+      background: rgba(0,0,0,0.4); /* Fondo semi-transparente para mejor legibilidad */
+      border-radius: 5px;
+    }
 
-        .section {
-            margin: 40px;
-        }
-
-        a {
-            color: gold;
-            text-decoration: none;
-        }
-    </style>
+    .links a:hover {
+      background: rgba(0,0,0,0.7);
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    Monarca Industries
-</header>
-
-<div class="section">
-    <h2>Romance in the Chiribiquete</h2>
-    <p>Proyecto de novela visual</p>
-
-    <img src="mon.png">
-    <img src="imagen2.png">
-</div>
-
-<div class="section">
-    <h2>Enlaces</h2>
-    <p><a href="#">Ver proyecto</a></p>
-</div>
-
+  <div class="links">
+    <a href="https://github.com/tu-usuario/tu-repo" target="_blank">GitHub</a>
+    <a href="https://tu-usuario.github.io/page/" target="_blank">Page</a>
+  </div>
 </body>
 </html>
