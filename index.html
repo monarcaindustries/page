@@ -44,6 +44,23 @@
             padding: 0 20px 50px 20px;
         }
 
+        /* ALERTA DE DISPONIBILIDAD */
+        .alerta-disponibilidad {
+            background-color: #1a180e;
+            border: 1px solid #ffcc00;
+            border-radius: 12px;
+            padding: 15px 20px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            color: #e6e6e6;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.08);
+        }
+        .alerta-disponibilidad strong {
+            color: #ffcc00;
+        }
+
         /* PARRILLA CON TARJETAS E IMÁGENES */
         .grid-empresas {
             display: flex;
@@ -60,6 +77,7 @@
             cursor: pointer;
             border: 1px solid #333;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
         .card-empresa:hover {
             transform: translateY(-5px);
@@ -87,6 +105,30 @@
             margin: 0;
             line-height: 1.4;
         }
+
+        /* TARJETAS DESHABILITADAS / EN PROCESO */
+        .card-deshabilitada {
+            opacity: 0.6;
+            cursor: not-allowed;
+            border-color: #222;
+        }
+        .card-deshabilitada:hover {
+            transform: none;
+            border-color: #222;
+            box-shadow: none;
+        }
+        .badge-proceso {
+            display: inline-block;
+            background: #333;
+            color: #ffcc00;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -103,10 +145,15 @@
 
     <div class="contenido">
 
+        <!-- ALERTA INFORMATIVA DE DISPONIBILIDAD -->
+        <div class="alerta-disponibilidad">
+            ⚠️ <strong>Aviso:</strong> De momento solo están disponibles las secciones de <strong>Team Monarca</strong> y <strong>Monarca Industries</strong>. Las demás áreas se encuentran actualmente en desarrollo.
+        </div>
+
         <!-- MENÚ DE LAS 5 EMPRESAS CON SUS IMÁGENES -->
         <div class="grid-empresas">
 
-            <!-- 1. TEAM MONARCA -->
+            <!-- 1. TEAM MONARCA (DISPONIBLE) -->
             <div class="card-empresa" onclick="location.href='teammonarca.html'">
                 <img src="resources/images/team.jpg" alt="Team Monarca">
                 <div class="card-body">
@@ -115,25 +162,27 @@
                 </div>
             </div>
 
-            <!-- 2. MONARCA PRODUCTIONS -->
-            <div class="card-empresa" onclick="location.href='productions.html'">
+            <!-- 2. MONARCA PRODUCTIONS (EN PROCESO) -->
+            <div class="card-empresa card-deshabilitada">
                 <img src="resources/images/pro.png" alt="Monarca Productions">
                 <div class="card-body">
                     <h2>Monarca Productions</h2>
                     <p>Producción audiovisual, contenido y proyectos visuales.</p>
+                    <span class="badge-proceso">En desarrollo</span>
                 </div>
             </div>
 
-            <!-- 3. MONARCA MUSIC -->
-            <div class="card-empresa" onclick="location.href='music.html'">
+            <!-- 3. MONARCA MUSIC (EN PROCESO) -->
+            <div class="card-empresa card-deshabilitada">
                 <img src="resources/images/mus.png" alt="Monarca Music">
                 <div class="card-body">
                     <h2>Monarca Music</h2>
                     <p>Proyectos musicales, lanzamientos y producciones de audio.</p>
+                    <span class="badge-proceso">En desarrollo</span>
                 </div>
             </div>
 
-            <!-- 4. MONARCA INDUSTRIES -->
+            <!-- 4. MONARCA INDUSTRIES (DISPONIBLE) -->
             <div class="card-empresa" onclick="location.href='industries.html'">
                 <img src="resources/images/mon.png" alt="Monarca Industries">
                 <div class="card-body">
@@ -142,12 +191,13 @@
                 </div>
             </div>
 
-            <!-- 5. MONARCA EVENTS -->
-            <div class="card-empresa" onclick="location.href='events.html'">
+            <!-- 5. MONARCA EVENTS (EN PROCESO) -->
+            <div class="card-empresa card-deshabilitada">
                 <img src="resources/images/eve.png" alt="Monarca Events">
                 <div class="card-body">
                     <h2>Monarca Events</h2>
                     <p>Eventos, presentaciones y experiencias en vivo.</p>
+                    <span class="badge-proceso">En desarrollo</span>
                 </div>
             </div>
 
