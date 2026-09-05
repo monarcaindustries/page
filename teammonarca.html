@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team Monarca</title>
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     /* Estilos del botón Volver */
     .btn-volver {
         display: inline-block;
@@ -21,6 +25,52 @@
         background-color: #252525;
         color: #ffcc00;
         border-color: #ffcc00;
+    }
+
+    /* Parrilla de tarjetas de proyectos */
+    .grid-proyectos {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card-proyecto {
+        width: 250px;
+        background: #1a1a1a;
+        border-radius: 15px;
+        overflow: hidden;
+        cursor: pointer;
+        text-align: left;
+        border: 1px solid #333;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-proyecto:hover {
+        transform: translateY(-5px);
+        border-color: #ffcc00;
+        box-shadow: 0 8px 20px rgba(255, 204, 0, 0.15);
+    }
+    .card-proyecto img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    .card-body h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    .card-body p {
+        font-size: 14px;
+        color: #aaa;
+        margin: 5px 0 0 0;
+        line-height: 1.4;
     }
 </style>
 </head>
@@ -39,32 +89,39 @@
 </h1>
 
 <!-- DESCRIPCIÓN -->
-<p style="text-align:center; max-width:800px; margin:auto; padding:10px;">
+<p style="text-align:center; max-width:800px; margin:auto; padding:10px; color:#ccc;">
     División enfocada en el desarrollo de videojuegos, narrativa interactiva y experiencias únicas. 
     Aquí es donde nacen las ideas que se convierten en mundos.
 </p>
 
 <!-- PROYECTOS -->
-<div style="text-align:center; margin-top:30px;">
+<div style="text-align:center;">
 
-    <!-- TARJETA PROYECTO 1 -->
-    <div onclick="location.href='projects/romance.html'" 
-         style="display:inline-block; width:250px; background:#1a1a1a; border-radius:15px; overflow:hidden; cursor:pointer; text-align:left; vertical-align:top; margin:10px;">
+    <div class="grid-proyectos">
 
-        <img src="resources/images/rim.jpeg" 
-             style="width:100%; height:150px; object-fit:cover; display:block;">
+        <!-- TARJETA PROYECTO 1 -->
+        <div class="card-proyecto" onclick="location.href='projects/romance.html'">
+            <img src="resources/images/rim.jpeg" alt="Romance in the Chiribiquete">
+            <div class="card-body">
+                <h3>Romance in the Chiribiquete</h3>
+                <p>Historia interactiva en la selva.</p>
+            </div>
+        </div>
 
-        <div style="padding:15px;">
-            <h3 style="margin:0; color:#fff;">Romance in the Chiribiquete</h3>
-            <p style="font-size:14px; color:#aaa; margin:5px 0 0 0;">
-                Historia interactiva en la selva.
-            </p>
+        <!-- TARJETA PROYECTO 2 (NUEVA) -->
+        <div class="card-proyecto" onclick="location.href='projects/cuidaelrio.html'">
+            <!-- Cambia la imagen y el enlace según tu proyecto -->
+            <img src="resources/images/ri.jpg" alt="Cuida el Río">
+            <div class="card-body">
+                <h3>Cuida el Río</h3>
+                <p>Juego Pixel Art para el cuidado del río.</p>
+            </div>
         </div>
 
     </div>
 
     <!-- PRÓXIMO PROYECTO -->
-    <div style="margin-top:20px;">
+    <div style="margin-top:40px;">
         <span style="display:inline-block; padding:15px 25px; background:#222; color:#aaa; border-radius:10px; font-size:14px; border:1px dashed #444;">
             Próximo: <strong>Condelax: The Last Battle</strong>
         </span>
